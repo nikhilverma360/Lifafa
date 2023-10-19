@@ -1,3 +1,370 @@
-const deployedContracts = null;
+const contracts = {
+  31337: [
+    {
+      chainId: "31337",
+      name: "localhost",
+      contracts: {
+        RedEnvelope: {
+          address: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+          abi: [
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: false,
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+              ],
+              name: "Paused",
+              type: "event",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: false,
+                  internalType: "address",
+                  name: "account",
+                  type: "address",
+                },
+              ],
+              name: "Unpaused",
+              type: "event",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              name: "_Envelopes",
+              outputs: [
+                {
+                  internalType: "enum RedEnvelope.EnvelopeType",
+                  name: "_type",
+                  type: "uint8",
+                },
+                {
+                  internalType: "address",
+                  name: "_contractAddress",
+                  type: "address",
+                },
+                {
+                  internalType: "string",
+                  name: "_name",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "_messasge",
+                  type: "string",
+                },
+                {
+                  internalType: "uint256",
+                  name: "_noOfUsers",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "_amountPerUsers",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "_claimsLeft",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "_expiry",
+                  type: "uint256",
+                },
+                {
+                  internalType: "bool",
+                  name: "_gameMode",
+                  type: "bool",
+                },
+                {
+                  internalType: "uint256",
+                  name: "_ERC20Amount",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "_ERC721TokenID",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "uint256",
+                  name: "_envelopeId",
+                  type: "uint256",
+                },
+              ],
+              name: "claimEnvelopeById",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "enum RedEnvelope.EnvelopeType",
+                  name: "_type",
+                  type: "uint8",
+                },
+                {
+                  internalType: "address",
+                  name: "_contractAddress",
+                  type: "address",
+                },
+                {
+                  internalType: "string",
+                  name: "_name",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "_messasge",
+                  type: "string",
+                },
+                {
+                  internalType: "uint256",
+                  name: "_noOfUsers",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "_amountPerUsers",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "_tokenId",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "_expiry",
+                  type: "uint256",
+                },
+                {
+                  internalType: "bool",
+                  name: "_gameMode",
+                  type: "bool",
+                },
+              ],
+              name: "createEnvelope",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "getMyEnvelopes",
+              outputs: [
+                {
+                  internalType: "uint256[]",
+                  name: "",
+                  type: "uint256[]",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              name: "myEnvelopes",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "paused",
+              outputs: [
+                {
+                  internalType: "bool",
+                  name: "",
+                  type: "bool",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+          ],
+        },
+        YourContract: {
+          address: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+          abi: [
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "_owner",
+                  type: "address",
+                },
+              ],
+              stateMutability: "nonpayable",
+              type: "constructor",
+            },
+            {
+              anonymous: false,
+              inputs: [
+                {
+                  indexed: true,
+                  internalType: "address",
+                  name: "greetingSetter",
+                  type: "address",
+                },
+                {
+                  indexed: false,
+                  internalType: "string",
+                  name: "newGreeting",
+                  type: "string",
+                },
+                {
+                  indexed: false,
+                  internalType: "bool",
+                  name: "premium",
+                  type: "bool",
+                },
+                {
+                  indexed: false,
+                  internalType: "uint256",
+                  name: "value",
+                  type: "uint256",
+                },
+              ],
+              name: "GreetingChange",
+              type: "event",
+            },
+            {
+              inputs: [],
+              name: "greeting",
+              outputs: [
+                {
+                  internalType: "string",
+                  name: "",
+                  type: "string",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "owner",
+              outputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "premium",
+              outputs: [
+                {
+                  internalType: "bool",
+                  name: "",
+                  type: "bool",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "string",
+                  name: "_newGreeting",
+                  type: "string",
+                },
+              ],
+              name: "setGreeting",
+              outputs: [],
+              stateMutability: "payable",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "totalCounter",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "",
+                  type: "address",
+                },
+              ],
+              name: "userGreetingCounter",
+              outputs: [
+                {
+                  internalType: "uint256",
+                  name: "",
+                  type: "uint256",
+                },
+              ],
+              stateMutability: "view",
+              type: "function",
+            },
+            {
+              inputs: [],
+              name: "withdraw",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+            {
+              stateMutability: "payable",
+              type: "receive",
+            },
+          ],
+        },
+      },
+    },
+  ],
+} as const;
 
-export default deployedContracts;
+export default contracts;
