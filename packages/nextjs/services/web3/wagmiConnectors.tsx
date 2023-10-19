@@ -1,3 +1,4 @@
+import { OktoConnector } from "@okto_wallet/okto-connect-sdk";
 import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import {
   braveWallet,
@@ -18,6 +19,13 @@ import { getTargetNetwork } from "~~/utils/scaffold-eth";
 
 const configuredNetwork = getTargetNetwork();
 const { onlyLocalBurnerWallet } = scaffoldConfig;
+
+const oktoConnector = new OktoConnector({
+  chains: [chains.localhost],
+  options: {
+    projectId: "3fc02c0dc5213d86049860ca365afa2e",
+  },
+});
 
 // We always want to have mainnet enabled (ENS resolution, ETH price, etc). But only once.
 const enabledChains = configuredNetwork.id === 1 ? [configuredNetwork] : [configuredNetwork, chains.mainnet];
@@ -59,6 +67,8 @@ const wallets = [
   safeWallet({ ...walletsOptions, debug: false, allowedDomains: [/gnosis-safe.io$/, /app.safe.global$/] }),
 ];
 
+const okto_wallet = [oktoConnector];
+
 /**
  * wagmi connectors for the wagmi context
  */
@@ -67,4 +77,8 @@ export const wagmiConnectors = connectorsForWallets([
     groupName: "Supported Wallets",
     wallets,
   },
+  // {
+  //   groupName: " Okto Wallet",
+  //   okto_wallet,
+  // },
 ]);
